@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Checkbox = () => {
-  const [selection, setSelection] = useState("");
-
-
-  const handleClick = (e) => {
-    setSelection(e.target.id)
-    console.log(selection);
-  }
-
+const Checkbox = ({ handleClick }) => {
   return (
     <>
       <h1>checkbox</h1>
