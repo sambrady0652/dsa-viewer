@@ -16,7 +16,7 @@ const Canvas = () => {
     e.preventDefault();
     const newNode = new TreeNode(val);
     setNodes([...nodes, newNode]);
-    console.log([...nodes, newNode]);
+
   }
 
   return (
