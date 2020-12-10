@@ -1,0 +1,41 @@
+.header {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.main_title {
+  text-align: center;
+}
+
+.node__container {
+  align-items: center;
+  display: flex;
+  margin: 10px;
+}
+
+.node__form {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node__button {
+  height: 20px;
+}
+
+.node__input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}

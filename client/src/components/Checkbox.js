@@ -2,15 +2,12 @@ import React from 'react';
 
 const Checkbox = ({ handleClick }) => {
   return (
-    <>
-      <h1>checkbox</h1>
-      <form>
-        <input type="radio" name="option" id="BST" onClick={handleClick} />
-        <label htmlFor="bst">BST </label><br></br>
-        <input type="radio" name="option" id="Tree" onClick={handleClick} />
-        <label htmlFor="tree">Tree </label>
-      </form>
-    </>
+    <form>
+      <input type="radio" name="option" id="BST" onClick={handleClick} />
+      <label htmlFor="bst">BST </label><br></br>
+      <input type="radio" name="option" id="Tree" onClick={handleClick} />
+      <label htmlFor="tree">Tree </label>
+    </form>
   )
 };
 

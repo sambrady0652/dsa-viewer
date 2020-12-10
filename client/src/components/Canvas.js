@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Checkbox from './Checkbox';
+import Node from './Node';
 import TreeNode from '../TreeNode';
 
 const Canvas = () => {
@@ -16,18 +17,16 @@ const Canvas = () => {
     e.preventDefault();
     const newNode = new TreeNode(val);
     setNodes([...nodes, newNode]);
-
   }
 
   return (
-    <div>
-      <Checkbox handleClick={handleClick} />
-      <form onSubmit={addNode}>
-        <input type="text" placeholder="value" value={val} onChange={e => setVal(e.target.value)} />
-        <button type="submit">Add Node</button>
-      </form>
-      <h1>{selection}</h1>
-    </div>
+    <>
+      <div className="header">
+        <Checkbox handleClick={handleClick} />
+      </div>
+      {/* {nodes.map(node => <Node node={node} addNode={addNode} val={val} setVal={setVal} />)} */}
+      <Node />
+    </>
   )
 }
 
