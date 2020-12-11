@@ -1,15 +1,23 @@
-import React from 'react';
-import NodeCreator from './NodeCreator';
+import React, { useContext, useState } from 'react';
+import { CanvasContext } from './Canvas';
 
-const Node = () => {
+const Node = ({ node }) => {
+  const [val, setVal] = useState("");
+  const { emptyNode } = useContext(CanvasContext);
+
+  const createNode = (value) => {
+    setVal(value);
+    node.val = value;
+  }
   return (
     <div className="node__container">
-
-      <button className="node__button"><i className="fas fa-thumbs-up" /></button>
+      <button className="node__button" onClick={emptyNode}>left</button>
       <div className="node__form">
-        <NodeCreator />
+        <form>
+          <input className="node__input" type="text" placeholder="Value" value={val} onChange={e => createNode(e.target.value)} />
+        </form>
       </div>
-      <button className="node__button">right</button>
+      <button className="node__button" onClick={emptyNode}>right</button>
     </div>
   )
 }

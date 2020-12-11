@@ -1,34 +1,30 @@
-import React, { useState } from 'react';
-
+import React, { createContext, useState } from 'react';
 import Checkbox from './Checkbox';
-import Node from './Node';
 import TreeNode from '../TreeNode';
+import Node from './Node';
+
+export const CanvasContext = createContext();
 
 const Canvas = () => {
   const [selection, setSelection] = useState("");
-  const [nodes, setNodes] = useState([]);
-  const [val, setVal] = useState("");
+  const [nodes, setNodes] = useState([new TreeNode(null)]);
 
   const handleClick = (e) => {
     setSelection(e.target.id)
   }
 
-  const addNode = (e) => {
-    e.preventDefault();
-    const newNode = new TreeNode(val);
-    setNodes([...nodes, newNode]);
+  const emptyNode = (e) => {
+    setNodes([...nodes, new TreeNode(null)]);
   }
 
   return (
     <>
-      <div className="header">
-        <Checkbox handleClick={handleClick} />
-      </div>
-      {/* {nodes.map(node => <Node node={node} addNode={addNode} val={val} setVal={setVal} />)} */}
-      <Node />
+      <CanvasContext.Provider value={{ handleClick, emptyNode, nodes }}>
+        <Checkbox />
+        {nodes.map(node => <Node node={node} />)}
+      </CanvasContext.Provider>
     </>
   )
 }
-
 
 export default Canvas;
